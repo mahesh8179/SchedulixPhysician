@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <title>Login & Registration Form</title> 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('img/doct-img3.jpg'); /* Replace 'your-image.jpg' with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .header {
+            font-size: 36px;
+            font-weight: 700;
+            color: #4B70F5 ;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .container .title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            position: relative;
+            height: 55px;
+            width: 100%;
+            margin-top: 25px;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid #ddd;
+            box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .input-field input {
+            height: 100%;
+            width: 100%;
+            padding: 0 15px 0 45px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .input-field input:focus {
+            background-color: #f5f5f5;
+            box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-field i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 20px;
+            left: 15px;
+        }
+
+        .button input {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 30px;
+            background-color: #4B70F5;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .button input:hover {
+            background-color: #0fa3c4;
+        }
+
+        .signup_link {
+            margin-top: 20px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .signup_link a {
+            color: #4B70F5;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+        .video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: -1; /* Make sure the video stays behind other content */
+}
+    </style>
+</head>
+<body>
+    <video class="video-bg" autoplay loop muted>
+        <source src="img/144040-784164382.mp4" type="video/mp4">
+    </video>
+    <!-- Separate Header for the Title -->
+    <div class="header">SchedulixPhysician</div>
+    
+    <!-- Form Container -->
+    <div class="container">
+        <span class="title">Admin Login</span>
+
+        <form action="Admin.php" method="post">
+            <div class="input-field">
+                <input type="text" name="email" placeholder="Enter your email" required>
+                <i class="uil uil-envelope icon"></i>
+            </div>
+            <div class="input-field">
+                <input type="password" class="password" name="password" placeholder="Enter your password" required>
+                <i class="uil uil-lock icon"></i>
+            </div>
+
+            <div class="button">
+                <input type="submit" value="Login">
+            </div>
+        </form>
+
+        <div class="signup_link">
+            Don't have an account? <a href="asignup.html">Signup</a>
+        </div>
+    </div>
+</body>
+</html>

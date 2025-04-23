@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Signup</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <style>
+        /* Base Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            background-color: #000;
+        }
+
+        /* Video Background Styling */
+        .background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Center Title Styling */
+        .header-title {
+            font-size: 48px;
+            font-weight: bold;
+            color: #13C5DD;
+            text-align: center;
+            margin-bottom: 30px; /* Space between title and form */
+            z-index: 1;
+        }
+
+        /* Signup Form Container */
+        .container {
+            width: 300px; /* Minimized form width */
+            background: rgba(255, 255, 255, 0.85); /* Slightly transparent background */
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            z-index: 1; /* Above the video */
+        }
+
+        .container h1 {
+            color: #13C5DD;
+            font-size: 20px; /* Reduced font size */
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .txt_field {
+            position: relative;
+            margin: 15px 0; /* Reduced margin for smaller form */
+            border-bottom: 2px solid #adadad;
+        }
+
+        .txt_field input {
+            width: 100%;
+            padding: 0 5px;
+            height: 35px; /* Reduced height */
+            font-size: 14px; /* Smaller font size */
+            border: none;
+            background: none;
+            outline: none;
+        }
+
+        .txt_field label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            color: #adadad;
+            transform: translateY(-50%);
+            font-size: 14px;
+            transition: 0.3s;
+            pointer-events: none;
+        }
+
+        .txt_field input:focus ~ label,
+        .txt_field input:valid ~ label {
+            top: -8px;
+            color: #13C5DD;
+            font-size: 12px;
+        }
+
+        .txt_field span::before {
+            content: '';
+            position: absolute;
+            top: 30px; /* Adjusted position */
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #13C5DD;
+            transition: 0.5s;
+        }
+
+        .txt_field input:focus ~ span::before,
+        .txt_field input:valid ~ span::before {
+            width: 100%;
+        }
+
+        /* Submit Button Styling */
+        input[type="Submit"] {
+            width: 100%;
+            height: 40px; /* Reduced button height */
+            border: none;
+            border-radius: 25px;
+            background: linear-gradient(135deg, #13C5DD, #1D9BF0);
+            font-size: 16px; /* Reduced font size */
+            font-weight: bold;
+            color: #fff;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        input[type="Submit"]:hover {
+            background: linear-gradient(135deg, #1D9BF0, #13C5DD);
+        }
+
+        /* Signup Link */
+        .signup_link {
+            margin-top: 20px;
+            font-size: 14px; /* Reduced font size */
+            color: #666;
+        }
+
+        .signup_link a {
+            color: #13C5DD;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .signup_link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay loop muted playsinline class="background-video">
+        <source src="img/49816-458438881.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Header Title Above the Form -->
+    <div class="header-title">SchedulixPhysician</div>
+
+    <!-- Signup Form Container -->
+    <div class="container">
+        <h1>Signup</h1>
+        <form method="POST" action="signup.php">
+            <div class="txt_field">
+                <input type="text" name="name" required>
+                <span></span>
+                <label>Username</label>
+            </div>
+            <div class="txt_field">
+                <input type="email" name="email" required>
+                <span></span>
+                <label>Email</label>
+            </div>
+            <div class="txt_field">
+                <input type="password" name="password" required>
+                <span></span>
+                <label>Password</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="contactno" required>
+                <span></span>
+                <label>Contact No</label>
+            </div>
+            <div class="txt_field">
+                <input type="text" name="gender" required>
+                <span></span>
+                <label>Gender</label>
+            </div>
+            <input name="submit" type="Submit" value="Sign Up">
+            <div class="signup_link">
+                Already have an account? <a href="login.html">Login</a>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
